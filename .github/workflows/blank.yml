@@ -7,6 +7,9 @@ on:
 jobs:
   hello:
     runs-on: self-hosted
+    defaults:
+      run:
+        shell: cmd
 
     steps:
       - name: Say Hello
@@ -14,5 +17,5 @@ jobs:
 
       - name: Show machine info
         run: |
-          echo "Computer name: $env:COMPUTERNAME"
-          echo "User: $env:USERNAME"
+          echo Computer name: %COMPUTERNAME%
+          echo User: %USERNAME%
